@@ -1,0 +1,260 @@
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color:#dfe8be ;
+}
+
+h2{
+    margin-bottom: 20px;
+}
+
+select{
+    padding: 10px;
+    margin: 10px;
+    border-radius: 6px ;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+h3{
+    color: rgba(66, 126, 127, 0.785);
+    margin-top: 40px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 90vh;
+    padding:20px;
+    max-width: 600px;
+    width: 80%;
+    box-sizing:;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.inputArea{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    flex-shrink: 0;
+    background: #fff;
+    padding-bottom: 10px;
+    border: 1px solid #ccc;
+    padding:20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+
+}
+#cardList {
+    list-style: none;
+    padding: 0;
+    margin:0;
+
+}
+#cardList li{
+    font-size: 12px;
+    background-color: #f8f8f8;
+    margin-bottom: 6px;
+    padding: 8px 12px;
+    border-radius: 6px;
+    display: flex;
+    width: fit-content;
+    align-items: center;
+    max-width: 100%;
+    box-shadow: 0 1px 3px rgbz(0, 0, 0 , 0.1);
+}
+.cardListContainer{
+    flex-grow: 1;
+    width: 100%;
+    max-width: 500px;
+    overflow-y: auto;
+    margin-top: 15px;
+    padding-right: 6px;
+}
+@media (max-width:600px){
+    .container{
+        height: 100vh;
+        border-radius: 0;
+        box-shadow: none;
+       
+    }
+    .inputArea{
+        display: flex;
+        flex-direction:column ;
+        gap: 5px;
+        padding: 15px;
+        flex-shrink: 0;
+
+    }
+        
+    .inputArea input, .inputArea button {
+        font-size: 16px;
+        padding: 8px;
+        margin: 10px;
+    }
+    #cardList li{
+       padding: 8px 10px;
+    }
+}
+
+button{
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: rgba(195, 209, 102, 0.459);
+    border-radius: 6px;
+    cursor: pointer;
+    border: 1px solid #aaa;
+}
+button:hover{
+    background-color: #979772;
+}
+
+#flashCard{
+    width: 300px;
+    height: 180px;
+    margin: 30px auto;
+    perspective: 1000px;
+    position: relative;
+}
+
+#flashCard .front, #flashCard .back{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    font-size: 24px;
+    font-weight: 500;
+    align-items: center;
+    justify-content:center;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    transition: transform 0.6s;
+    backface-visibility: hidden;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+   
+}
+
+#flashCard .front{
+   background-color: rgba(60, 169, 169, 0.584);
+   transform: rotateY(0deg);
+}
+#flashCard .back{
+    transform: rotateY(180deg);
+    background-color: rgba(143, 154, 154, 0.769);
+}
+
+#flashCard.flipped .back{
+    transform: rotateY(0deg);
+}
+#flashCard.flipped .front{
+    transform: rotateY(180deg);
+}
+
+
+#addCardsBtn {
+  background-color: #94d396;
+  color: rgb(9, 7, 7);
+  border: none;
+  padding: 12px 18px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition:  0.3s;
+  margin: 20px;
+}
+
+#addCardsBtn:hover {
+  background-color: #45a049;
+}
+
+.shake{
+    animation:shake 0.3s;
+}
+
+@keyframes shake{
+    0%, 100% {transform: translateX(0);}
+    25% {transform : translateX(-5px;)}
+    75% {transform: translateX(5px);}
+
+}
+#messageBox{
+  display:none;
+  margin-top:10px;
+  padding:8px;
+  border-radius:5px;
+  text-align:center;
+  font-weight:bold;
+  transition: opacity 0.3s ease;
+
+}
+
+.success {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.error {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+#backToPractiseBtn {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background-color: #f0f0f0f5;
+    color: #2b2525;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+}
+
+#backToPractiseBtn:hover {
+    background-color: #b7b859;
+}
+.deleteBtn {
+    background: #e74c3c;
+    border: none;
+    color: white;
+    padding: 2px 6px;
+    font-size: 12px;   
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 8px;
+}
+
+.deleteBtn:hover {
+    background: #c0392b;
+}
+#autoMode, #manualMode {
+  padding: 8px 14px;
+  margin: 5px;
+  border-radius: 8px;
+  background: #eee;
+  border: 1px solid #aaa;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#autoMode.active, #manualMode.active {
+  background: #487cb4;
+  color: #fff;
+  border-color: #007bff;
+}
+#languageDisplay {
+  font-weight: bold;
+  color: #b95c5c;
+  font-size: 1.1rem;
+  margin: 10px;
+  font-style: italic;
+}

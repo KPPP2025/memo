@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Cards</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body><header><button id="backToPractiseBtn">Go to Practise</button></header>
+    
+    <div class="container"><h3>Add New Flashcards</h3>
+    <div class="inputArea">     
+    <div class="data"> 
+    <input type="" list="fileSuggestion" id="fileName" placeholder="Create New or Choose existing File">
+    <datalist id="fileSuggestion"> </datalist>
+    </div>
+    <div class="intext">
+    <input type="text" id="frontText" placeholder="Front">
+        <input type="text" id="backText" placeholder="Back">
+        <small id="fileNameError" class="error-msg"></small>
+        <button id="saveCardBtn">Save</button>
+        <span id="messageBox"> </span>
+        </div>
+    </div>
+    
+    <div class="cardListContainer">
+    <h4> Cards in this file:</h4>
+    <ul id="cardList"> </ul>
+    </div>
+    </div>
+
+
+    <script src="script.js"> </script>
+</body>
+</html>
